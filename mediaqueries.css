@@ -63,7 +63,32 @@
     height: fit-content;
     margin-bottom: 2rem;
   }
+
+  /* mediaqueries.css - À l'intérieur de @media screen and (max-width: 600px) */
+
+  /* 1. On retire le sélecteur .contact-info-upper-container de la liste existante pour éviter les conflits */
   .about-containers,
+  .btn-container {
+    flex-wrap: wrap;
+  }
+
+  /* 2. On crée une règle spécifique pour le contact : L'Industrialisation Verticale */
+  .contact-info-upper-container {
+    flex-direction: column; /* C'est la clé : on empile au lieu d'aligner */
+    height: fit-content;    /* On laisse le conteneur s'adapter au contenu empilé */
+    gap: 0.5rem;            /* Espacement calibré entre l'email et LinkedIn */
+    padding: 2rem;          /* 2rem On donne de l'air au conteneur */
+    width: 80%;             /* On sécurise la largeur sur mobile */
+    margin: 2rem auto;      /* Centrage automatique */
+    max-width: 400px;        /* Bloque la largeur max pour ne pas devenir énorme sur une tablette */
+    max-height: 100px;        /* Bloque la largeur max pour ne pas devenir énorme sur une tablette */
+  }
+
+  /* Optionnel : Ajustement des textes pour l'équilibre visuel mobile */
+  .contact-info-container p {
+    font-size: 1.1rem;
+  }
+  /*.about-containers,
   .contact-info-upper-container,
   .btn-container {
     flex-wrap: wrap;
@@ -74,7 +99,7 @@
   .contact-info-container p,
   .nav-links li a {
     font-size: 1rem;
-  }
+  }*/
   .experience-sub-title {
     font-size: 1.25rem;
   }
