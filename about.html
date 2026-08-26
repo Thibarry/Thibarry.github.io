@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead AI R&D Architect | Agentic Systems & AI Platforms</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <script src="assets/js/tailwind-config.js"></script>
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body class="antialiased overflow-x-hidden selection:bg-brand-blue selection:text-white relative">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-transparent"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+            <a href="#"
+                class="text-xl font-bold tracking-tighter text-slate-900 hover:text-brand-blue transition-colors flex-shrink-0">Architect<span
+                    class="text-brand-blue">.ai</span></a>
+
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-brand-blue transition-colors">Home</a>
+                <a href="about.html"
+                    class="text-brand-blue font-semibold hover:text-brand-blue transition-colors">About</a>
+                <a href="projects.html" class="hover:text-brand-blue transition-colors">Projects</a>
+                <a href="blog.html" class="hover:text-brand-blue transition-colors">Blog</a>
+                <a href="podcast.html" class="hover:text-brand-blue transition-colors">Podcast</a>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-6">
+                <!-- Socials -->
+                <div class="flex items-center gap-2">
+                    <!-- Github -->
+                    <a href="#"
+                        class="w-10 h-10 rounded-xl border border-slate-200 bg-white flex items-center justify-center text-slate-500 hover:border-[#4376E6] hover:text-[#4376E6] hover:bg-blue-50/50 transition-all shadow-sm">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.379.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="#"
+                        class="w-10 h-10 rounded-xl border border-slate-200 bg-white flex items-center justify-center text-slate-500 hover:border-[#4376E6] hover:text-[#4376E6] hover:bg-blue-50/50 transition-all shadow-sm">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                    <!-- Twitter / X -->
+                    <a href="#"
+                        class="w-10 h-10 rounded-xl border border-slate-200 bg-white flex items-center justify-center text-slate-500 hover:border-[#4376E6] hover:text-[#4376E6] hover:bg-blue-50/50 transition-all shadow-sm">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                        </svg>
+                    </a>
+                    <!-- Email -->
+                    <a href="#"
+                        class="w-10 h-10 rounded-xl border border-slate-200 bg-white flex items-center justify-center text-slate-500 hover:border-[#4376E6] hover:text-[#4376E6] hover:bg-blue-50/50 transition-all shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+                <!-- EN Dropdown -->
+                <button
+                    class="flex items-center text-slate-700 font-bold hover:text-brand-blue transition-colors text-sm tracking-wide">
+                    EN
+                    <svg class="w-3.5 h-3.5 ml-1.5 text-brand-blue" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section : Design épuré & compact -->
+        <section class="pt-16 pb-4 md:pt-20 md:pb-6">
+            <div class="max-w-7xl mx-auto px-6">
+                <div
+                    class="relative bg-gradient-to-br from-blue-50/70 via-slate-50/50 to-indigo-50/30 rounded-[2rem] p-6 md:p-8 lg:p-10 overflow-hidden border border-blue-100/80 shadow-sm">
+
+                    <div class="grid lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+
+                        <!-- Colonne Gauche : Titre, Description & Boutons Pilules -->
+                        <div class="lg:col-span-7 reveal">
+                            <span
+                                class="block text-xs md:text-sm font-semibold text-[#4376E6] tracking-[0.15em] uppercase mb-2">
+                                Lead AI R&D Architect
+                            </span>
+
+                            <h1
+                                class="text-3xl sm:text-4xl lg:text-[2.6rem] font-serif font-bold text-slate-900 leading-[1.15] mb-3 tracking-tight">
+                                Crafting AI architectures with expert precision.
+                            </h1>
+
+                            <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl mb-5">
+                                Architecte des systèmes cognitifs spécialisé dans la conception d'écosystèmes
+                                multi-agents autonomes, l'optimisation FinOps et la gouvernance des données.
+                            </p>
+
+                            <!-- Boutons Pilules harmonisés avec le bleu #4376E6 de index.html -->
+                            <div class="flex flex-wrap gap-3.5 items-center">
+                                <a href="#parcours"
+                                    class="px-6 py-2.5 sm:px-7 sm:py-3 rounded-full bg-[#4376E6] text-white font-semibold text-sm hover:bg-blue-600 transition-all shadow-md shadow-blue-500/20 hover:shadow-lg flex items-center gap-2">
+                                    <span>Explore Now</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </a>
+                                <a href="assets/img/CV - 202503 v9.4.docx.md" download="CV-Thierno-Barry.md"
+                                    class="px-6 py-2.5 sm:px-7 sm:py-3 rounded-full bg-white border border-[#4376E6] text-[#4376E6] font-semibold text-sm hover:bg-blue-50 transition-all shadow-xs flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-[#4376E6]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                    </svg>
+                                    <span>Download CV</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Colonne Droite : Photo épurée + Badge Flottant -->
+                        <div class="lg:col-span-5 relative reveal flex justify-center items-center">
+
+                            <div
+                                class="relative w-[260px] sm:w-[300px] h-[290px] sm:h-[330px] flex items-center justify-center">
+
+                                <!-- Photo de profil nette et sans animation -->
+                                <div
+                                    class="relative z-10 w-[230px] sm:w-[270px] h-[280px] sm:h-[320px] rounded-b-[36px] overflow-hidden flex items-end justify-center">
+                                    <img src="assets/img/profile-pic-3.png" alt="Thierno Barry"
+                                        class="w-full h-full object-cover object-top filter contrast-[1.03]">
+                                </div>
+
+                                <!-- Badge Flottant Certification Azure AI Engineer (Haut Gauche - Cliquable) -->
+                                <a href="https://learn.microsoft.com/en-us/users/thiernobarry-9847/credentials/7cb4cde33b963570?ref=https%3A%2F%2Fwww.linkedin.com%2F"
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="absolute -top-3 -left-6 sm:-left-12 lg:-left-16 z-20 bg-white p-2.5 sm:p-3 rounded-2xl shadow-lg border border-blue-50 flex items-center gap-3 hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-0.5"
+                                    title="View Microsoft Certified Credential">
+                                    <img src="assets/img/azure_ai_engineer_badge.png"
+                                        alt="Microsoft Certified Azure AI Engineer Associate"
+                                        class="w-10 h-10 sm:w-11 sm:h-11 object-contain">
+                                    <div>
+                                        <span
+                                            class="text-xs sm:text-sm font-bold text-slate-900 leading-none block">Azure
+                                            AI</span>
+                                        <span
+                                            class="text-[10px] text-[#4376E6] font-medium tracking-tight mt-0.5 block flex items-center gap-1">
+                                            Engineer Associate
+                                            <svg class="w-2.5 h-2.5 opacity-60" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </a>
+
+                                <!-- Badge Flottant Statistique (Harmonisé en #4376E6 - Bas Droite) -->
+                                <div
+                                    class="absolute -bottom-1.5 right-0 sm:-right-1.5 z-20 bg-white p-3 sm:p-3.5 rounded-xl shadow-lg border border-blue-50 flex items-center gap-2.5">
+                                    <div
+                                        class="w-9 h-9 rounded-lg bg-blue-50 text-[#4376E6] flex items-center justify-center shrink-0">
+                                        <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span
+                                            class="text-base sm:text-lg font-bold text-slate-900 leading-none block">8+
+                                            Years</span>
+                                        <span
+                                            class="text-[10px] text-[#4376E6] font-medium tracking-tight mt-0.5 block">Data
+                                            & AI Engineering</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Trusted By Bar : Bandeau épuré inspiré de la PJ (Harmonisé en Brand Blue #4376E6) -->
+                <div class="mt-8 pt-2">
+                    <p
+                        class="text-xs font-bold tracking-[0.18em] text-[#4376E6] uppercase mb-4 text-center sm:text-left">
+                        TRUSTED BY MAJOR ACCOUNTS
+                    </p>
+                    <div class="flex flex-wrap items-center justify-between gap-6 sm:gap-8 md:gap-10">
+
+                        <!-- Malakoff Humanis -->
+                        <a href="https://www.malakoffhumanis.com/" target="_blank" rel="noopener noreferrer"
+                            class="h-14 sm:h-16 md:h-20 flex items-center justify-center" title="Malakoff Humanis">
+                            <img src="assets/img/malakoff_humanis_logo.jpg" alt="Malakoff Humanis"
+                                class="max-h-full max-w-[210px] sm:max-w-[235px] object-contain mix-blend-multiply">
+                        </a>
+
+                        <!-- BNP Paribas -->
+                        <a href="https://mabanque.bnpparibas/" target="_blank" rel="noopener noreferrer"
+                            class="h-14 sm:h-16 md:h-20 flex items-center justify-center" title="BNP Paribas">
+                            <img src="assets/img/bnp_paribas_logo.jpg" alt="BNP Paribas"
+                                class="max-h-full max-w-[190px] sm:max-w-[215px] object-contain mix-blend-multiply">
+                        </a>
+
+                        <!-- L'Oréal -->
+                        <a href="https://www.loreal.com/fr/" target="_blank" rel="noopener noreferrer"
+                            class="h-14 sm:h-16 md:h-20 flex items-center justify-center" title="L'Oréal">
+                            <img src="assets/img/loreal_logo.jpg" alt="L'Oréal"
+                                class="max-h-full max-w-[160px] sm:max-w-[185px] object-contain mix-blend-multiply">
+                        </a>
+
+                        <!-- Circana -->
+                        <a href="https://www.circana.com/fr-fr" target="_blank" rel="noopener noreferrer"
+                            class="h-14 sm:h-16 md:h-20 flex items-center justify-center" title="Circana">
+                            <img src="assets/img/circana_logo.png" alt="Circana"
+                                class="max-h-full max-w-[175px] sm:max-w-[200px] object-contain mix-blend-multiply">
+                        </a>
+
+                        <!-- SNCF Réseau -->
+                        <a href="https://www.sncf-reseau.com/fr" target="_blank" rel="noopener noreferrer"
+                            class="h-14 sm:h-16 md:h-20 flex items-center justify-center" title="SNCF Réseau">
+                            <img src="assets/img/sncf_reseau_logo.jpg" alt="SNCF Réseau"
+                                class="max-h-full max-w-[180px] sm:max-w-[205px] object-contain mix-blend-multiply">
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="max-w-7xl mx-auto px-6 pt-6">
+            <!-- About Details Section -->
+            <section id="about" class="pb-12">
+
+                <!-- Core Philosophy Section -->
+                <div class="mb-24 reveal">
+                    <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-10 font-serif text-center">Philosophie
+                        Directrice</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div
+                            class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all group">
+                            <div
+                                class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-3">Déterminisme Agentique</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">Remplacer le comportement imprévisible des
+                                LLM par des architectures multi-agents structurées et des validations strictes par
+                                types.</p>
+                        </div>
+                        <div
+                            class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all group">
+                            <div
+                                class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-3">AI Security & Quality Gates</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">Mettre en place des barrières de sécurité
+                                Pydantic, de l'évaluation automatisée (LLM-as-a-judge) et du Human-in-the-Loop.</p>
+                        </div>
+                        <div
+                            class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all group">
+                            <div
+                                class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08-.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-3">FinOps Absolue</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">Éviter le gaspillage de jetons en
+                                concevant du cache sémantique et des contournements intelligents (Zero-LLM bypass) pour
+                                les données connues.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Journey Section -->
+                <div id="parcours" class="mb-24 reveal scroll-mt-28">
+                    <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-12 font-serif text-center">Parcours
+                        Professionnel</h3>
+                    <div class="max-w-4xl mx-auto">
+                        <div class="space-y-16">
+
+                            <!-- Epsilon France (Groupe avec Promotion) -->
+                            <div class="relative">
+                                <!-- Epsilon Group Header -->
+                                <div class="flex items-center gap-4 mb-6">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-[#0f2759] border border-blue-200/50 flex items-center justify-center text-white font-bold text-sm shadow-md overflow-hidden shrink-0">
+                                        <span class="text-xs tracking-tighter font-mono">EPS</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-bold text-slate-900">Epsilon France</h4>
+                                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">6
+                                            ans 7 mois</span>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-10 pl-6 border-l-2 border-slate-200 ml-6">
+                                    <!-- Rôle 1: Lead AI R&D Architect -->
+                                    <div class="relative">
+                                        <div
+                                            class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-brand-blue ring-4 ring-white">
+                                        </div>
+                                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">mai
+                                            2026 - présent · 4 mois</span>
+                                        <h5 class="text-lg font-bold text-slate-900 mt-1">Lead AI R&D Architect &
+                                            Agentic Systems | GenAIOps & FinOps</h5>
+                                        <p class="text-xs font-medium text-brand-blue mb-1">Paris · Hybride</p>
+                                        <p class="text-slate-600 text-sm leading-relaxed mb-2">
+                                            Département AI product & advanced analytics - Pilotage et conception d'un
+                                            moteur cognitif multi-agents remplaçant les approches ETL traditionnelles
+                                            par des graphes d'états cycliques, capables de raisonner et de
+                                            s'auto-corriger face à des schémas inconnus (Out-of-Distribution).
+                                            Architecture modulaire agnostique déployable en local (On-Premise),
+                                            intégrant une mémoire persistante (Optimisation FinOps) et un protocole
+                                            Human-in-the-Loop (Gouvernance).
+                                        </p>
+                                        <div class="flex flex-wrap gap-1.5 pt-2">
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">Agentic
+                                                AI</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">FinOps</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">LLMOps</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">Gouvernance
+                                                des Données</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Rôle 2: ML & Data Engineer (Détaché chez SNCF Réseau en tant que consultant Epsilon) -->
+                                    <div class="relative">
+                                        <div
+                                            class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white">
+                                        </div>
+                                        <span
+                                            class="text-xs font-semibold text-slate-400 uppercase tracking-wider">janv.
+                                            2025 - avr. 2026 · 1 an 4 mois</span>
+                                        <h5 class="text-lg font-bold text-slate-900 mt-1">ML & Data Engineer | MLOps &
+                                            Computer Vision (Mission SNCF Réseau)</h5>
+                                        <p class="text-xs font-medium text-brand-blue mb-1">Saint-Denis · Hybride</p>
+                                        <p class="text-slate-600 text-sm leading-relaxed mb-2">
+                                            Direction Générale Numérique (Pôle Data Office) – Conception stratégique
+                                            d'architectures résilientes sur AWS (Python) à la croisée du Data
+                                            Engineering et de l'Intelligence Artificielle. En charge de la qualité des
+                                            données à grande échelle (Data Quality/ETL) et de l'industrialisation de
+                                            modèles de Computer Vision pour l'automatisation de l'inspection ferroviaire
+                                            (YOLOv8 Edge, PyTorch).
+                                        </p>
+                                        <div class="flex flex-wrap gap-1.5 pt-2">
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">Python</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">PyTorch</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">Hugging
+                                                Face</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">EasyOCR</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">AWS</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Rôle 3: Data Engineer & Cloud Architect (Mission Circana) -->
+                                    <div class="relative">
+                                        <div
+                                            class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white">
+                                        </div>
+                                        <span
+                                            class="text-xs font-semibold text-slate-400 uppercase tracking-wider">janv.
+                                            2022 - déc. 2024 · 3 ans</span>
+                                        <h5 class="text-lg font-bold text-slate-900 mt-1">Data Engineer & Cloud
+                                            Architect | Azure Databricks (Mission Circana)</h5>
+                                        <p class="text-xs font-medium text-brand-blue mb-1">Puteaux · Hybride</p>
+                                        <p class="text-slate-600 text-sm leading-relaxed mb-2">
+                                            Pôle factory data solution – Pilotage technique de la transition stratégique
+                                            des systèmes analytiques historiques vers architectures Cloud distribuées.
+                                            En charge de l'ingestion, de la scalabilité et de la fiabilité des données
+                                            massives pour des leaders mondiaux du Retail et du Food Service (PySpark,
+                                            ADF).
+                                        </p>
+                                        <div class="flex flex-wrap gap-1.5 pt-2">
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">Azure
+                                                Databricks</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">Azure
+                                                Data Factory</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">PySpark</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">Migration
+                                                SAS vers Cloud</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">CI/CD</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Rôle 4: Data Governance Lead & Cloud Analyst (Mission L'Oréal) -->
+                                    <div class="relative">
+                                        <div
+                                            class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white">
+                                        </div>
+                                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">juin
+                                            2021 - déc. 2021 · 7 mois</span>
+                                        <h5 class="text-lg font-bold text-slate-900 mt-1">Data Governance Lead & Cloud
+                                            Analyst | GCP (Mission L'Oréal)</h5>
+                                        <p class="text-xs font-medium text-brand-blue mb-1">Levallois-Perret · Full
+                                            remote</p>
+                                        <p class="text-slate-600 text-sm leading-relaxed mb-2">
+                                            Direction Digital & Marketing zone Europe – Intervention stratégique pour
+                                            structurer et sécuriser l'écosystème de données marketing européen.
+                                            Conception et automatisation des pipelines de Data Quality à grande échelle
+                                            sur Google BigQuery.
+                                        </p>
+                                        <div class="flex flex-wrap gap-1.5 pt-2">
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">Google
+                                                BigQuery</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">GCP</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">Looker
+                                                Studio</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">Data
+                                                Quality</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">Data
+                                                Governance</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Rôle 5: Data Analyst (Mission BNP Paribas) -->
+                                    <div class="relative">
+                                        <div
+                                            class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white">
+                                        </div>
+                                        <span
+                                            class="text-xs font-semibold text-slate-400 uppercase tracking-wider">févr.
+                                            2020 - mai 2021 · 1 an 4 mois</span>
+                                        <h5 class="text-lg font-bold text-slate-900 mt-1">Data Analyst (Mission BNP
+                                            Paribas)</h5>
+                                        <p class="text-xs font-medium text-brand-blue mb-1">Paris</p>
+                                        <p class="text-slate-600 text-sm leading-relaxed mb-2">
+                                            Bureau d'études Retail – Exploitation de bases de données transactionnelles
+                                            massives. Modélisation de la connaissance client pour orienter la stratégie
+                                            Marketing et sécuriser le réseau (Audit, Teradata SQL, SAS).
+                                        </p>
+                                        <div class="flex flex-wrap gap-1.5 pt-2">
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">Teradata
+                                                SQL</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">SAS</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">Data
+                                                Analysis</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Deloren Consulting / Malakoff Humanis -->
+                            <div class="relative">
+                                <!-- Deloren Group Header -->
+                                <div class="flex items-center gap-4 mb-6">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-[#173a70] border border-blue-200/50 flex items-center justify-center text-white font-bold text-sm shadow-md overflow-hidden shrink-0">
+                                        <span class="text-xs tracking-tighter font-mono">DEL</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-bold text-slate-900">Deloren Consulting</h4>
+                                        <span
+                                            class="text-xs font-semibold text-slate-400 uppercase tracking-wider">sept.
+                                            2018 - nov. 2019 · 1 an 3 mois</span>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-10 pl-6 border-l-2 border-slate-200 ml-6">
+                                    <!-- Mission Malakoff Humanis -->
+                                    <div class="relative">
+                                        <div
+                                            class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white">
+                                        </div>
+                                        <span
+                                            class="text-xs font-semibold text-slate-400 uppercase tracking-wider">sept.
+                                            2018 - nov. 2019 · 1 an 3 mois</span>
+                                        <h5 class="text-lg font-bold text-slate-900 mt-1">Data Engineer | Architecture
+                                            Data & Conformité (Mission Malakoff Humanis)</h5>
+                                        <p class="text-xs font-medium text-brand-blue mb-1">Paris</p>
+                                        <p class="text-slate-600 text-sm leading-relaxed mb-2">
+                                            DSI décisionnelle – Conception et développement de pipelines ETL robustes
+                                            pour la construction d'un Datamart unifié massif (+120 millions de lignes).
+                                            Implémentation d'algorithmes de filtrage réglementaire pour garantir la
+                                            conformité et la sécurité des données de l'entreprise.
+                                        </p>
+                                        <div class="flex flex-wrap gap-1.5 pt-2">
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">Script
+                                                Shell</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">SAS
+                                                Base/Macro</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">SAS
+                                                Entreprise Guide</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">SAS
+                                                Management Console</span>
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">SGBDR
+                                                (SQL Server, Oracle)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Matrix (Version Améliorée & Moderne) -->
+                <div class="mb-24 reveal">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <h3 class="text-2xl md:text-4xl font-bold text-slate-900 font-serif tracking-tight">
+                            Architecture & Tech Stack
+                        </h3>
+                        <p class="text-slate-500 text-sm mt-2">
+                            Maîtrise complète de la chaîne de valeur : de l'orchestration multi-agents à
+                            l'infrastructure FinOps & MLOps en production.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                        <!-- 1. GenAIOps, Agents & Inférence Edge -->
+                        <div
+                            class="group p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-blue-200/80 transition-all duration-300 flex flex-col justify-between">
+                            <div>
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-blue-50/80 text-[#4376E6] flex items-center justify-center mb-5 group-hover:bg-[#4376E6] group-hover:text-white transition-colors duration-300">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-lg mb-1 tracking-tight">
+                                    GenAIOps & Agents
+                                </h4>
+                                <p class="text-xs text-slate-400 mb-4 font-medium">Orchestration & Inférence Edge</p>
+
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100 group-hover:border-blue-100 transition-colors">LangGraph</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">AutoGen</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">CrewAI</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">SLMs
+                                        (Llama, Mistral)</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">LoRA
+                                        / PEFT</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">DSPy</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">PyTorch
+                                        / JAX</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">YOLOv8
+                                        Edge</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Ingénierie Data, RAG & Graphes -->
+                        <div
+                            class="group p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-blue-200/80 transition-all duration-300 flex flex-col justify-between">
+                            <div>
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-blue-50/80 text-[#4376E6] flex items-center justify-center mb-5 group-hover:bg-[#4376E6] group-hover:text-white transition-colors duration-300">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-lg mb-1 tracking-tight">
+                                    Data & Graphes
+                                </h4>
+                                <p class="text-xs text-slate-400 mb-4 font-medium">Lakehouse, Vector & Knowledge</p>
+
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100 group-hover:border-blue-100 transition-colors">Polars
+                                        (Rust)</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">Databricks</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">PySpark</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">Qdrant</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">ChromaDB</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">Neo4j
+                                        (Graphes)</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">SQL
+                                        / NoSQL</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Architecture Système, FinOps & Gouvernance -->
+                        <div
+                            class="group p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-blue-200/80 transition-all duration-300 flex flex-col justify-between">
+                            <div>
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-blue-50/80 text-[#4376E6] flex items-center justify-center mb-5 group-hover:bg-[#4376E6] group-hover:text-white transition-colors duration-300">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-lg mb-1 tracking-tight">
+                                    FinOps & Gouvernance
+                                </h4>
+                                <p class="text-xs text-slate-400 mb-4 font-medium">Contrôle des coûts & Sécurité IA</p>
+
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100 group-hover:border-blue-100 transition-colors">Semantic
+                                        Caching</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">Zero-LLM
+                                        Bypass</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">Cascade
+                                        Routing</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">MCP
+                                        / ACP</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">Pydantic
+                                        Gates</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">LLM-as-a-judge</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">Human-in-the-Loop</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. MLOps, Cloud, DevOps & Déploiement -->
+                        <div
+                            class="group p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-blue-200/80 transition-all duration-300 flex flex-col justify-between">
+                            <div>
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-blue-50/80 text-[#4376E6] flex items-center justify-center mb-5 group-hover:bg-[#4376E6] group-hover:text-white transition-colors duration-300">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-lg mb-1 tracking-tight">
+                                    MLOps & Cloud
+                                </h4>
+                                <p class="text-xs text-slate-400 mb-4 font-medium">Infra, CI/CD & Déploiement</p>
+
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100 group-hover:border-blue-100 transition-colors">UV
+                                        (Rust)</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">FastAPI</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">Docker
+                                        / K8s</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">Terraform</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">Azure
+                                        / AWS / GCP</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">MLflow
+                                        / Evidently</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 text-slate-700 border border-slate-100">CI/CD
+                                        DevOps</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Contact Section --><!-- Contact Section -->
+            <section id="contact" class="py-16 border-t border-slate-100 bg-slate-50/50">
+                <div class="max-w-7xl mx-auto px-6 w-full reveal">
+                    <div
+                        class="bg-white rounded-[2rem] p-6 lg:p-8 border border-slate-200 shadow-xl shadow-slate-200/50">
+                        <div class="grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16 items-start py-4">
+
+                            <!-- Left Column (Text & Contact Info) -->
+                            <div class="flex flex-col h-full">
+                                <span class="text-xs font-bold text-[#4376E6] uppercase tracking-widest mb-3">Let's
+                                    create together</span>
+                                <h3 class="text-3xl font-bold text-slate-900 mb-4 font-serif">Have a Project in Mind?
+                                </h3>
+                                <p class="text-slate-600 text-lg leading-relaxed mb-10">I'd love to hear about your
+                                    project and explore how we can create something amazing together.</p>
+
+                                <div class="flex flex-col gap-5 mt-auto">
+                                    <!-- Email -->
+                                    <div class="flex items-center gap-4 text-slate-600">
+                                        <svg class="w-6 h-6 text-[#4376E6]" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                        <a href="mailto:thierno-ry@hotmail.fr"
+                                            class="text-base font-medium hover:text-[#4376E6] transition-colors">thierno-ry@hotmail.fr</a>
+                                    </div>
+                                    <!-- Phone -->
+                                    <div class="flex items-center gap-4 text-slate-600">
+                                        <svg class="w-6 h-6 text-[#4376E6]" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                            </path>
+                                        </svg>
+                                        <a href="tel:+15551234567"
+                                            class="text-base font-medium hover:text-[#4376E6] transition-colors">+1
+                                            (+33) 6 48 40 67 39</a>
+                                    </div>
+                                    <!-- Location -->
+                                    <div class="flex items-center gap-4 text-slate-600">
+                                        <svg class="w-6 h-6 text-[#4376E6]" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                            </path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                        <span class="text-base font-medium">Paris (Villejuif), France</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column (Form) -->
+                            <div class="flex flex-col justify-center">
+                                <form class="flex flex-col gap-4" action="mailto:thierno-ry@hotmail.fr" method="post"
+                                    enctype="text/plain">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <input type="text" name="name" placeholder="Your Name"
+                                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-[#4376E6] focus:bg-white transition-colors"
+                                            required>
+                                        <input type="email" name="email" placeholder="Your Email"
+                                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-[#4376E6] focus:bg-white transition-colors"
+                                            required>
+                                    </div>
+
+                                    <!-- Subject instead of Project Type & Budget Range -->
+                                    <input type="text" name="subject" placeholder="Subject"
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-[#4376E6] focus:bg-white transition-colors"
+                                        required>
+
+                                    <div class="flex flex-col sm:flex-row gap-4 items-end">
+                                        <textarea name="message" placeholder="Tell me about your project..." rows="7"
+                                            class="w-full sm:flex-1 bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-[#4376E6] focus:bg-white transition-colors resize-none"
+                                            required></textarea>
+
+                                        <button type="submit"
+                                            class="w-full sm:w-auto shrink-0 px-8 py-4 bg-[#4376E6] text-white rounded-xl font-bold hover:bg-blue-600 transition-colors shadow-md shadow-blue-500/20 flex items-center justify-center gap-2 group mb-0.5">
+                                            Send Message
+                                            <svg class="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="m22 2-7 20-4-9-9-4Z M22 2 11 13"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-200 py-8 text-center text-slate-500 text-sm bg-slate-50">
+        <p>&copy; 2026 Lead AI R&D Architect. Designed & Built in Austin, TX.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

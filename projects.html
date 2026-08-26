@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead AI R&D Architect | Agentic Systems & AI Platforms</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <script src="assets/js/tailwind-config.js"></script>
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body class="antialiased overflow-x-hidden selection:bg-brand-blue selection:text-white relative">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-transparent"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+            <a href="#"
+                class="text-xl font-bold tracking-tighter text-slate-900 hover:text-brand-blue transition-colors flex-shrink-0">Architect<span
+                    class="text-brand-blue">.ai</span></a>
+
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-brand-blue transition-colors">Home</a>
+                <a href="about.html" class="hover:text-brand-blue transition-colors">About</a>
+                <a href="projects.html"
+                    class="text-brand-blue font-semibold hover:text-brand-blue transition-colors">Projects</a>
+                <a href="blog.html" class="hover:text-brand-blue transition-colors">Blog</a>
+                <a href="podcast.html" class="hover:text-brand-blue transition-colors">Podcast</a>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-6">
+                <!-- Socials -->
+                <div class="flex items-center gap-2">
+                    <!-- Github -->
+                    <a href="#"
+                        class="w-10 h-10 rounded-xl border border-slate-200 bg-white flex items-center justify-center text-slate-500 hover:border-[#4376E6] hover:text-[#4376E6] hover:bg-blue-50/50 transition-all shadow-sm">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.379.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="#"
+                        class="w-10 h-10 rounded-xl border border-slate-200 bg-white flex items-center justify-center text-slate-500 hover:border-[#4376E6] hover:text-[#4376E6] hover:bg-blue-50/50 transition-all shadow-sm">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                    <!-- Twitter / X -->
+                    <a href="#"
+                        class="w-10 h-10 rounded-xl border border-slate-200 bg-white flex items-center justify-center text-slate-500 hover:border-[#4376E6] hover:text-[#4376E6] hover:bg-blue-50/50 transition-all shadow-sm">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                        </svg>
+                    </a>
+                    <!-- Email -->
+                    <a href="#"
+                        class="w-10 h-10 rounded-xl border border-slate-200 bg-white flex items-center justify-center text-slate-500 hover:border-[#4376E6] hover:text-[#4376E6] hover:bg-blue-50/50 transition-all shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+                <!-- EN Dropdown -->
+                <button
+                    class="flex items-center text-slate-700 font-bold hover:text-brand-blue transition-colors text-sm tracking-wide">
+                    EN
+                    <svg class="w-3.5 h-3.5 ml-1.5 text-brand-blue" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 min-h-screen">
+
+        <!-- Header -->
+        <section class="max-w-7xl mx-auto px-6 mb-12 mt-12">
+            <h1 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Projects</h1>
+            <p class="text-slate-600 text-lg max-w-2xl">Discover a selection of my agentic platforms, research
+                prototypes, and open-source contributions.</p>
+        </section>
+
+        <!-- Main Layout: Filters + Grid -->
+        <section class="max-w-7xl mx-auto px-6 mb-24">
+            <div class="grid lg:grid-cols-4 gap-8">
+
+                <!-- Left Sidebar: Filters -->
+                <!-- Left Sidebar: Filters -->
+                <aside class="lg:col-span-1">
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 sticky top-24 shadow-sm"
+                        id="filters-form">
+                        <h2 class="text-lg font-bold text-slate-900 mb-6 font-serif">Filtres</h2>
+
+                        <!-- Recherche -->
+                        <div class="mb-6">
+                            <label
+                                class="block text-xs font-bold tracking-wider uppercase text-slate-500 mb-2">Recherche</label>
+                            <div class="relative">
+                                <input type="text" id="filter-search" placeholder="Par mots-clés..."
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors text-slate-700">
+                                <button
+                                    class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-brand-blue/10 text-brand-blue rounded-lg flex items-center justify-center hover:bg-brand-blue hover:text-white transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Tri -->
+                        <div class="mb-6">
+                            <label
+                                class="block text-xs font-bold tracking-wider uppercase text-slate-500 mb-2">Tri</label>
+                            <select id="filter-sort"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm appearance-none focus:outline-none focus:border-brand-blue cursor-pointer text-slate-700">
+                                <option value="desc">Date (plus récent)</option>
+                                <option value="asc">Date (plus ancien)</option>
+                                <option value="rel">Pertinence</option>
+                            </select>
+                        </div>
+
+                        <!-- Thème -->
+                        <div class="mb-6">
+                            <label
+                                class="block text-xs font-bold tracking-wider uppercase text-slate-500 mb-2">Thème</label>
+                            <select id="filter-theme"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm appearance-none focus:outline-none focus:border-brand-blue cursor-pointer text-slate-700">
+                                <option value="">Tous les thèmes</option>
+                                <option value="AgentOps">AgentOps</option>
+                                <option value="RAG">RAG & LLMOps</option>
+                                <option value="FinOps">FinOps</option>
+                            </select>
+                        </div>
+
+                        <!-- Type -->
+                        <div class="mb-6">
+                            <label
+                                class="block text-xs font-bold tracking-wider uppercase text-slate-500 mb-3">Type</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input type="checkbox" value="Plateformes Entreprise"
+                                        class="filter-type w-4 h-4 rounded border-slate-300 text-brand-blue focus:ring-brand-blue cursor-pointer bg-slate-50">
+                                    <span
+                                        class="text-sm text-slate-600 group-hover:text-slate-900 transition-colors">Plateformes
+                                        Entreprise</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input type="checkbox" value="Recherche & R&D"
+                                        class="filter-type w-4 h-4 rounded border-slate-300 text-brand-blue focus:ring-brand-blue cursor-pointer bg-slate-50">
+                                    <span
+                                        class="text-sm text-slate-600 group-hover:text-slate-900 transition-colors">Recherche
+                                        & R&D</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input type="checkbox" value="Open Source"
+                                        class="filter-type w-4 h-4 rounded border-slate-300 text-brand-blue focus:ring-brand-blue cursor-pointer bg-slate-50">
+                                    <span
+                                        class="text-sm text-slate-600 group-hover:text-slate-900 transition-colors">Open
+                                        Source</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Période -->
+                        <div class="mb-8">
+                            <label
+                                class="block text-xs font-bold tracking-wider uppercase text-slate-500 mb-3">Période</label>
+                            <div class="space-y-3 pl-1">
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input type="radio" name="period" value="1w"
+                                        class="filter-period w-4 h-4 border-slate-300 text-brand-blue focus:ring-brand-blue cursor-pointer bg-slate-50">
+                                    <span
+                                        class="text-sm text-slate-600 group-hover:text-slate-900 transition-colors">Moins
+                                        d'une semaine</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input type="radio" name="period" value="1m"
+                                        class="filter-period w-4 h-4 border-slate-300 text-brand-blue focus:ring-brand-blue cursor-pointer bg-slate-50">
+                                    <span
+                                        class="text-sm text-slate-600 group-hover:text-slate-900 transition-colors">Moins
+                                        d'un mois</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input type="radio" name="period" value="1y"
+                                        class="filter-period w-4 h-4 border-slate-300 text-brand-blue focus:ring-brand-blue cursor-pointer bg-slate-50">
+                                    <span
+                                        class="text-sm text-slate-600 group-hover:text-slate-900 transition-colors">Moins
+                                        d'un an</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="flex flex-col gap-3">
+                            <button id="btn-reset-filters"
+                                class="w-full py-3 text-slate-500 font-medium rounded-xl hover:bg-slate-100 transition-colors text-sm border border-transparent hover:border-slate-200">
+                                Réinitialiser les filtres
+                            </button>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Right Content: Grid -->
+                <div class="lg:col-span-3">
+                    <div class="grid md:grid-cols-2 gap-8" id="projects-grid">
+
+                        <!-- PROJECTS_START -->
+
+                        <!-- Project Card -->
+                        <a href="#"
+                            class="project-card group flex flex-col bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-blue-400 hover:shadow-xl hover:shadow-brand-blue/5 transition-all card-panel reveal"
+                            data-title="agentic data pipeline" data-theme="AgentOps" data-type="Open Source"
+                            data-date="2026-08-20" style="transition-delay: 0ms;">
+                            <!-- Image/Visual Area -->
+                            <div class="h-48 bg-slate-900 relative overflow-hidden flex flex-col items-center justify-center border-b border-slate-200 w-full">
+                                <div class="font-mono text-slate-300 text-xs p-6 w-full h-full text-left scale-90 origin-left">
+                                    <span class="text-purple-400">async def</span> <span class="text-blue-400">run</span>():<br />
+                                    &nbsp;&nbsp;<span class="text-slate-500"># Agentic Data Pipeline</span><br />
+                                    &nbsp;&nbsp;<span class="text-purple-400">await</span> system.init()<br />
+                                    &nbsp;&nbsp;<span class="text-purple-400">return</span> system.execute()
+                                </div>
+                            </div>
+                            <!-- Content Area -->
+                            <div class="p-8 flex-1 flex flex-col">
+                                <div class="mb-4">
+                                    <span class="inline-block px-3 py-1 bg-blue-50 text-brand-blue text-xs font-semibold rounded-full border border-blue-100 group-hover:bg-brand-blue group-hover:text-white transition-colors">AgentOps</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-blue transition-colors font-serif">
+                                    Agentic Data Pipeline
+                                </h3>
+                                <p class="text-slate-600 text-sm mb-6 flex-1 leading-relaxed">
+                                    A self-healing data pipeline powered by AI agents that automatically detects and resolves data anomalies in real-time.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-[10px] font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded">Python</span>
+<span class="text-[10px] font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded">Pandas</span>
+<span class="text-[10px] font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded">LangChain</span>
+                                </div>
+                                <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
+                                    <span class="text-xs font-medium text-slate-400 uppercase tracking-widest">Août 2026</span>
+                                    <svg class="w-5 h-5 text-brand-blue transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Project Card -->
+                        <a href="#"
+                            class="project-card group flex flex-col bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-blue-400 hover:shadow-xl hover:shadow-brand-blue/5 transition-all card-panel reveal"
+                            data-title="omniagent framework" data-theme="AgentOps" data-type="Plateformes Entreprise"
+                            data-date="2026-08-15" style="transition-delay: 100ms;">
+                            <!-- Image/Visual Area -->
+                            <div class="h-48 bg-slate-900 relative overflow-hidden flex flex-col items-center justify-center border-b border-slate-200 w-full">
+                                <div class="font-mono text-slate-300 text-xs p-6 w-full h-full text-left scale-90 origin-left">
+                                    <span class="text-purple-400">async def</span> <span class="text-blue-400">run</span>():<br />
+                                    &nbsp;&nbsp;<span class="text-slate-500"># OmniAgent Framework</span><br />
+                                    &nbsp;&nbsp;<span class="text-purple-400">await</span> system.init()<br />
+                                    &nbsp;&nbsp;<span class="text-purple-400">return</span> system.execute()
+                                </div>
+                            </div>
+                            <!-- Content Area -->
+                            <div class="p-8 flex-1 flex flex-col">
+                                <div class="mb-4">
+                                    <span class="inline-block px-3 py-1 bg-blue-50 text-brand-blue text-xs font-semibold rounded-full border border-blue-100 group-hover:bg-brand-blue group-hover:text-white transition-colors">AgentOps</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-blue transition-colors font-serif">
+                                    OmniAgent Framework
+                                </h3>
+                                <p class="text-slate-600 text-sm mb-6 flex-1 leading-relaxed">
+                                    A lightweight, highly scalable framework for orchestrating swarms of specialized LLM agents in enterprise environments.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-[10px] font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded">Python</span>
+<span class="text-[10px] font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded">FastAPI</span>
+                                </div>
+                                <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
+                                    <span class="text-xs font-medium text-slate-400 uppercase tracking-widest">Août 2026</span>
+                                    <svg class="w-5 h-5 text-brand-blue transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Project Card -->
+                        <a href="#"
+                            class="project-card group flex flex-col bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-blue-400 hover:shadow-xl hover:shadow-brand-blue/5 transition-all card-panel reveal"
+                            data-title="semantic rag engine" data-theme="RAG" data-type="Recherche & R&D"
+                            data-date="2026-06-15" style="transition-delay: 200ms;">
+                            <!-- Image/Visual Area -->
+                            <div class="h-48 bg-slate-900 relative overflow-hidden flex flex-col items-center justify-center border-b border-slate-200 w-full">
+                                <div class="font-mono text-slate-300 text-xs p-6 w-full h-full text-left scale-90 origin-left">
+                                    <span class="text-purple-400">async def</span> <span class="text-blue-400">run</span>():<br />
+                                    &nbsp;&nbsp;<span class="text-slate-500"># Semantic RAG Engine</span><br />
+                                    &nbsp;&nbsp;<span class="text-purple-400">await</span> system.init()<br />
+                                    &nbsp;&nbsp;<span class="text-purple-400">return</span> system.execute()
+                                </div>
+                            </div>
+                            <!-- Content Area -->
+                            <div class="p-8 flex-1 flex flex-col">
+                                <div class="mb-4">
+                                    <span class="inline-block px-3 py-1 bg-blue-50 text-brand-blue text-xs font-semibold rounded-full border border-blue-100 group-hover:bg-brand-blue group-hover:text-white transition-colors">RAG</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-blue transition-colors font-serif">
+                                    Semantic RAG Engine
+                                </h3>
+                                <p class="text-slate-600 text-sm mb-6 flex-1 leading-relaxed">
+                                    Advanced retrieval-augmented generation system featuring multi-hop reasoning, hybrid search, and automatic semantic chunking.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-[10px] font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded">Go</span>
+<span class="text-[10px] font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded">PostgreSQL</span>
+                                </div>
+                                <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
+                                    <span class="text-xs font-medium text-slate-400 uppercase tracking-widest">Juin 2026</span>
+                                    <svg class="w-5 h-5 text-brand-blue transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Project Card -->
+                        <a href="#"
+                            class="project-card group flex flex-col bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-blue-400 hover:shadow-xl hover:shadow-brand-blue/5 transition-all card-panel reveal"
+                            data-title="llm routing proxy" data-theme="FinOps" data-type="Open Source"
+                            data-date="2026-05-15" style="transition-delay: 0ms;">
+                            <!-- Image/Visual Area -->
+                            <div class="h-48 bg-slate-900 relative overflow-hidden flex flex-col items-center justify-center border-b border-slate-200 w-full">
+                                <div class="font-mono text-slate-300 text-xs p-6 w-full h-full text-left scale-90 origin-left">
+                                    <span class="text-purple-400">async def</span> <span class="text-blue-400">run</span>():<br />
+                                    &nbsp;&nbsp;<span class="text-slate-500"># LLM Routing Proxy</span><br />
+                                    &nbsp;&nbsp;<span class="text-purple-400">await</span> system.init()<br />
+                                    &nbsp;&nbsp;<span class="text-purple-400">return</span> system.execute()
+                                </div>
+                            </div>
+                            <!-- Content Area -->
+                            <div class="p-8 flex-1 flex flex-col">
+                                <div class="mb-4">
+                                    <span class="inline-block px-3 py-1 bg-blue-50 text-brand-blue text-xs font-semibold rounded-full border border-blue-100 group-hover:bg-brand-blue group-hover:text-white transition-colors">FinOps</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-blue transition-colors font-serif">
+                                    LLM Routing Proxy
+                                </h3>
+                                <p class="text-slate-600 text-sm mb-6 flex-1 leading-relaxed">
+                                    An intelligent routing layer that automatically selects the most cost-effective and capable model for incoming API requests.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-[10px] font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded">Rust</span>
+<span class="text-[10px] font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded">Redis</span>
+                                </div>
+                                <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
+                                    <span class="text-xs font-medium text-slate-400 uppercase tracking-widest">Mai 2026</span>
+                                    <svg class="w-5 h-5 text-brand-blue transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- PROJECTS_END -->
+
+                        <div id="no-results" class="hidden col-span-2 text-center py-12">
+                            <p class="text-slate-500 text-lg">Aucun projet ne correspond à vos filtres.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 border-t border-slate-100 bg-slate-50/50">
+            <div class="max-w-7xl mx-auto px-6 w-full reveal">
+                <div class="bg-white rounded-[2rem] p-6 lg:p-8 border border-slate-200 shadow-xl shadow-slate-200/50">
+                    <div class="grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16 items-start py-4">
+
+                        <!-- Left Column (Text & Contact Info) -->
+                        <div class="flex flex-col h-full">
+                            <span class="text-xs font-bold text-[#4376E6] uppercase tracking-widest mb-3">Let's
+                                create together</span>
+                            <h3 class="text-3xl font-bold text-slate-900 mb-4 font-serif">Have a Project in Mind?
+                            </h3>
+                            <p class="text-slate-600 text-lg leading-relaxed mb-10">I'd love to hear about your
+                                project and explore how we can create something amazing together.</p>
+
+                            <div class="flex flex-col gap-5 mt-auto">
+                                <!-- Email -->
+                                <div class="flex items-center gap-4 text-slate-600">
+                                    <svg class="w-6 h-6 text-[#4376E6]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    <a href="mailto:thierno-ry@hotmail.fr"
+                                        class="text-base font-medium hover:text-[#4376E6] transition-colors">thierno-ry@hotmail.fr</a>
+                                </div>
+                                <!-- Phone -->
+                                <div class="flex items-center gap-4 text-slate-600">
+                                    <svg class="w-6 h-6 text-[#4376E6]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                        </path>
+                                    </svg>
+                                    <a href="tel:+15551234567"
+                                        class="text-base font-medium hover:text-[#4376E6] transition-colors">+1
+                                        (+33) 6 48 40 67 39</a>
+                                </div>
+                                <!-- Location -->
+                                <div class="flex items-center gap-4 text-slate-600">
+                                    <svg class="w-6 h-6 text-[#4376E6]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span class="text-base font-medium">Paris (Villejuif), France</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column (Form) -->
+                        <div class="flex flex-col justify-center">
+                            <form class="flex flex-col gap-4" action="mailto:thierno-ry@hotmail.fr" method="post"
+                                enctype="text/plain">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <input type="text" name="name" placeholder="Your Name"
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-[#4376E6] focus:bg-white transition-colors"
+                                        required>
+                                    <input type="email" name="email" placeholder="Your Email"
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-[#4376E6] focus:bg-white transition-colors"
+                                        required>
+                                </div>
+
+                                <!-- Subject instead of Project Type & Budget Range -->
+                                <input type="text" name="subject" placeholder="Subject"
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-[#4376E6] focus:bg-white transition-colors"
+                                    required>
+
+                                <div class="flex flex-col sm:flex-row gap-4 items-end">
+                                    <textarea name="message" placeholder="Tell me about your project..." rows="7"
+                                        class="w-full sm:flex-1 bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-[#4376E6] focus:bg-white transition-colors resize-none"
+                                        required></textarea>
+
+                                    <button type="submit"
+                                        class="w-full sm:w-auto shrink-0 px-8 py-4 bg-[#4376E6] text-white rounded-xl font-bold hover:bg-blue-600 transition-colors shadow-md shadow-blue-500/20 flex items-center justify-center gap-2 group mb-0.5">
+                                        Send Message
+                                        <svg class="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="m22 2-7 20-4-9-9-4Z M22 2 11 13"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-200 py-8 text-center text-slate-500 text-sm bg-slate-50">
+        <p>&copy; 2026 Lead AI R&D Architect. Designed & Built in Austin, TX.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
