@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Highlight active nav link and add animation classes
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('#navbar a[href$=".html"]');
+    const navLinks = document.querySelectorAll('#navbar a[href$=".html"], #mobile-menu a[href$=".html"]');
     
     navLinks.forEach(link => {
         link.classList.add('nav-link');
@@ -61,6 +61,41 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active-nav-link');
         }
     });
+
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuIconOpen = document.getElementById('mobile-menu-icon-open');
+    const mobileMenuIconClose = document.getElementById('mobile-menu-icon-close');
+
+    if (mobileMenuBtn && mobileMenu) {
+        const toggleMobileMenu = () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+                if (mobileMenuIconOpen) mobileMenuIconOpen.classList.remove('hidden');
+                if (mobileMenuIconClose) mobileMenuIconClose.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            } else {
+                mobileMenu.classList.remove('hidden');
+                if (mobileMenuIconOpen) mobileMenuIconOpen.classList.add('hidden');
+                if (mobileMenuIconClose) mobileMenuIconClose.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+            }
+        };
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+        // Close mobile menu when clicking on a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                if (mobileMenuIconOpen) mobileMenuIconOpen.classList.remove('hidden');
+                if (mobileMenuIconClose) mobileMenuIconClose.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            });
+        });
+    }
 });
 
 // --- Projects & Blog Page Filtering Logic ---
