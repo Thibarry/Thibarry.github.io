@@ -1,21 +1,21 @@
 import os
 import re
 
-BLOG_DIR = os.path.join('assets', '_blog')
-HTML_FILE = 'blog.html'
+blogDirectory = os.path.join('assets', '_blog')
+htmlFile = 'blog.html'
 
-def parse_markdown_file(filepath):
-    with open(filepath, 'r', encoding='utf-8') as f:
+def parseMarkdownFile(filePath):
+    with open(filePath, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    frontmatter_match = re.match(r'^---\n(.*?)\n---', content, re.DOTALL)
-    if not frontmatter_match:
+    frontmatterMatch = re.match(r'^---\n(.*?)\n---', content, re.DOTALL)
+    if not frontmatterMatch:
         return None
 
-    yaml_block = frontmatter_match.group(1)
+    yamlBlock = frontmatterMatch.group(1)
     
     data = {}
-    for line in yaml_block.split('\n'):
+    for line in yamlBlock.split('\n'):
         if ':' in line:
             key, val = line.split(':', 1)
             key = key.strip()
@@ -24,96 +24,101 @@ def parse_markdown_file(filepath):
             
     return data
 
-def generate_blog_card_html(post, delay_ms=0):
-    title = post.get('title', 'Unknown Post')
-    category = post.get('category', 'Uncategorized')
+def formatFrenchDate(dateStr):
+    months = [
+        "janvier", "février", "mars", "avril", "mai", "juin",
+        "juillet", "août", "septembre", "octobre", "novembre", "décembre"
+    ]
+    try:
+        y, m, d = str(dateStr).split('-')
+        dayNum = int(d)
+        dayFormatted = "1er" if dayNum == 1 else str(dayNum)
+        return f"{dayFormatted} {months[int(m)-1]} {y}"
+    except Exception:
+        return str(dateStr)
+
+def generateBlogRowHtml(post):
+    title = post.get('title', 'Publication IA')
+    category = post.get('category', 'Architecture IA')
     date = post.get('date', '2026-01-01')
     excerpt = post.get('excerpt', '')
-    image = post.get('image', '')
-    
-    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    try:
-        y, m, d = str(date).split('-')
-        date_formatted = f"{months[int(m)-1]} {int(d)}, {y}"
-    except:
-        date_formatted = str(date)
-        
-    if image and image.strip() != "":
-        visual_html = f'<img src="{image}" alt="{title}" class="w-full h-full object-cover">'
-    else:
-        # Fallback SVG based on category
-        svg_content = ''
-        if category.lower() == 'research':
-            svg_content = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2.5 2.5 0 00-2.5-2.5H15"></path>'
-        elif category.lower() == 'engineering':
-            svg_content = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>'
-        else: # Opinion or default
-            svg_content = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>'
-            
-        visual_html = f'<svg class="w-12 h-12 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">{svg_content}</svg>'
+    dateFormatted = formatFrenchDate(date)
 
-    delay_style = f' style="transition-delay: {delay_ms}ms;"' if delay_ms > 0 else ''
+    readTimes = {
+        "L'IA Agentique comme Nouveau Système d'Exploitation d'Entreprise": "7 min de lecture",
+        "Orchestration Multi-Agents à l'Échelle des Workflows Industriels": "9 min de lecture",
+        "L'Évolution des Moteurs RAG : Du Vector Search au GraphRAG Hybride": "8 min de lecture",
+        "Pourquoi le Prompt Engineering Cède la Place à l'Ingénierie Déterministe": "6 min de lecture"
+    }
+    readTime = readTimes.get(title, "7 min de lecture")
 
-    html = f'''                    <!-- Blog Post -->
-                    <a href="#" class="blog-card group block reveal"{delay_style} data-title="{title.lower()}" data-theme="{category}" data-type="Article" data-date="{date}">
-                        <div class="rounded-2xl overflow-hidden mb-6 card-panel aspect-video flex items-center justify-center bg-slate-50 group-hover:border-blue-300 transition-colors">
-                            {visual_html}
+    html = f'''                    <!-- Publication -->
+                    <article class="py-6 group transition-all duration-300">
+                        <div class="flex flex-wrap items-center gap-3 text-xs text-slate-500 mb-2">
+                            <span class="font-semibold text-[#4376E6] bg-blue-50 px-2.5 py-0.5 rounded-md border border-blue-100/80">{category}</span>
+                            <span class="text-slate-300">&bull;</span>
+                            <span class="font-medium text-slate-500">{dateFormatted}</span>
+                            <span class="text-slate-300">&bull;</span>
+                            <span class="text-slate-400">{readTime}</span>
                         </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-500 mb-3">
-                            <span class="text-brand-blue font-medium">{category}</span>
-                            <span>&bull;</span>
-                            <span>{date_formatted}</span>
+                        <h2 class="text-xl md:text-2xl font-bold font-serif text-slate-900 mb-2 group-hover:text-[#4376E6] transition-colors leading-snug">
+                            <a href="#" class="inline-block">{title}</a>
+                        </h2>
+                        <p class="text-slate-600 text-sm md:text-base leading-relaxed mb-3">
+                            {excerpt}
+                        </p>
+                        <div class="flex items-center gap-2 text-xs md:text-sm font-bold text-[#4376E6] group-hover:translate-x-1.5 transition-transform duration-200 inline-flex">
+                            <span>Lire la publication</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-blue transition-colors">
-                            {title}</h3>
-                        <p class="text-slate-600 text-sm line-clamp-3">{excerpt}</p>
-                    </a>
+                    </article>
 '''
     return html
 
-def main():
-    if not os.path.exists(BLOG_DIR):
-        print(f"Directory {BLOG_DIR} not found.")
+def buildBlog():
+    if not os.path.exists(blogDirectory):
+        print(f"Directory {blogDirectory} not found.")
         return
 
     posts = []
-    for filename in os.listdir(BLOG_DIR):
+    for filename in os.listdir(blogDirectory):
         if filename.endswith('.md'):
-            filepath = os.path.join(BLOG_DIR, filename)
-            post_data = parse_markdown_file(filepath)
-            if post_data:
-                posts.append(post_data)
+            filePath = os.path.join(blogDirectory, filename)
+            postData = parseMarkdownFile(filePath)
+            if postData:
+                posts.append(postData)
                 
     # Sort posts by date descending
     posts.sort(key=lambda x: str(x.get('date', '')), reverse=True)
     
-    html_cards = []
-    for idx, post in enumerate(posts):
-        delay = (idx % 3) * 100 
-        html_cards.append(generate_blog_card_html(post, delay))
+    htmlRows = []
+    for post in posts:
+        htmlRows.append(generateBlogRowHtml(post))
         
-    all_cards_html = "".join(html_cards)
+    allRowsHtml = "".join(htmlRows)
     
     # Inject into HTML
-    with open(HTML_FILE, 'r', encoding='utf-8') as f:
-        html_content = f.read()
+    with open(htmlFile, 'r', encoding='utf-8') as f:
+        htmlContent = f.read()
         
-    start_marker = "<!-- BLOG_START -->"
-    end_marker = "<!-- BLOG_END -->"
+    startMarker = "<!-- BLOG_START -->"
+    endMarker = "<!-- BLOG_END -->"
     
-    start_idx = html_content.find(start_marker)
-    end_idx = html_content.find(end_marker)
+    startIdx = htmlContent.find(startMarker)
+    endIdx = htmlContent.find(endMarker)
     
-    if start_idx == -1 or end_idx == -1:
+    if startIdx == -1 or endIdx == -1:
         print("Markers not found in HTML file!")
         return
         
-    new_html = html_content[:start_idx + len(start_marker)] + "\n" + all_cards_html + "                    " + html_content[end_idx:]
+    newHtml = htmlContent[:startIdx + len(startMarker)] + "\n" + allRowsHtml + "                    " + htmlContent[endIdx:]
     
-    with open(HTML_FILE, 'w', encoding='utf-8') as f:
-        f.write(new_html)
+    with open(htmlFile, 'w', encoding='utf-8') as f:
+        f.write(newHtml)
         
-    print(f"Successfully built {len(posts)} blog posts into {HTML_FILE}!")
+    print(f"Successfully built {len(posts)} blog posts into {htmlFile}!")
 
 if __name__ == "__main__":
-    main()
+    buildBlog()

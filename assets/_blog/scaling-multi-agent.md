@@ -1,9 +1,11 @@
 ---
-title: "Scaling Multi-Agent Orchestration for Enterprise Workflows"
+title: "Orchestration Multi-Agents à l'Échelle des Workflows Industriels"
 date: 2026-10-12
-category: "Research"
+category: "Systèmes Distribués"
 image: ""
-excerpt: "An deep dive into the architectural patterns required to orchestrate swarms of specialized LLM agents efficiently, while maintaining context boundaries and reducing hallucination cascades."
+excerpt: "Analyse approfondie des patrons d'architecture pour coordonner des swarms d'agents LLM spécialisés tout en éliminant les risques de cascades d'hallucinations."
 ---
 
-Content goes here...
+# Orchestration Multi-Agents à l'Échelle des Workflows Industriels
+
+Conception de topologies d'agents hiérarchiques et décentralisées : mécanismes de vote bayésien, consensus distribué et validation de schémas stricts pour garantir l'intégrité transactionnelle en production.

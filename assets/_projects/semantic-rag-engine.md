@@ -1,11 +1,11 @@
 ---
-title: "Semantic RAG Engine"
+title: "Moteur RAG Sémantique"
 date: 2026-06-15
 theme: "RAG"
 type: "Recherche & R&D"
 tech_stack: ["Go", "PostgreSQL"]
 image: ""
-excerpt: "Advanced retrieval-augmented generation system featuring multi-hop reasoning, hybrid search, and automatic semantic chunking."
+excerpt: "Système avancé de génération augmentée par récupération intégrant raisonnement multi-sauts, recherche hybride et chunking sémantique."
 ---
 
-Detailed content for Semantic RAG Engine goes here...
+Contenu détaillé du Moteur RAG Sémantique...
