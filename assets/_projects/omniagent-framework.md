@@ -1,11 +1,11 @@
 ---
-title: "OmniAgent Framework"
+title: "Framework OmniAgent"
 date: 2026-08-15
 theme: "AgentOps"
 type: "Plateformes Entreprise"
 tech_stack: ["Python", "FastAPI"]
 image: ""
-excerpt: "A lightweight, highly scalable framework for orchestrating swarms of specialized LLM agents in enterprise environments."
+excerpt: "Framework haute performance pour l'orchestration de swarms d'agents LLM spécialisés en environnement d'entreprise."
 ---
 
-Detailed content for OmniAgent Framework goes here...
+Contenu détaillé du framework OmniAgent...
