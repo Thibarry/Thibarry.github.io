@@ -49,8 +49,8 @@ Pour cloner le projet, recompiler le HTML à partir des fichiers Markdown et tes
 
 ### 1. Cloner le dépôt
 ```bash
-git clone https://github.com/votre-nom/ai-architect-portfolio.git
-cd ai-architect-portfolio
+git clone https://github.com/Thibarry/Thibarry.github.io.git
+cd Thibarry.github.io
 ```
 
 ### 2. (Optionnel) Environnement Python pour les tests
